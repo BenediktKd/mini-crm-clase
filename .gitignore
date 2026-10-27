@@ -1,0 +1,4 @@
+node_modules
+src/paginas/index.js
+.env
+.DS_Store

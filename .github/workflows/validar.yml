@@ -1,0 +1,25 @@
+name: validar
+on:
+  pull_request:
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Solo se puede tocar src/paginas
+        run: |
+          ajenos=$(git diff --name-only "origin/${{ github.base_ref }}...HEAD" | grep -v '^src/paginas/' || true)
+          if [ -n "$ajenos" ]; then
+            echo "Este pull request toca archivos fuera de src/paginas/:"
+            echo "$ajenos"
+            exit 1
+          fi
+      - name: Construir
+        run: node build.mjs
+      - name: Validar páginas
+        run: node validate.mjs
