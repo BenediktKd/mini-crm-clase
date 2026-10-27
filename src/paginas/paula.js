@@ -8,7 +8,7 @@ export default {
     const titulo = document.createElement("h2");
     titulo.textContent = "Página Paula";
     const reto = document.createElement("p");
-    reto.textContent = "Tu reto: un kanban de leads con métricas del equipo: carga por responsable, leads por persona, UF en reserva y un botón para asignar automáticamente.";
+    reto.textContent = "Tu reto (prueba): un kanban de leads con métricas del equipo: carga por responsable, leads por persona, UF en reserva y un botón para asignar automáticamente.";
     caja.append(titulo, reto);
     el.append(caja);
   },
