@@ -1,6 +1,7 @@
 name: validar
 on:
   pull_request:
+    branches: [main]
 jobs:
   validar:
     runs-on: ubuntu-latest
