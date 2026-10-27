@@ -185,3 +185,4 @@ function mostrar() {
 
 window.addEventListener("hashchange", mostrar);
 mostrar();
+// cambio ajeno
